@@ -32,7 +32,7 @@ class Game(object):
         clock = pygame.time.Clock()
         clock.tick(tick)  # limits FPS to 10
 
-    def events(self):#, event) -> None:
+    def events(self, event):#, event) -> None:
         """
         handles all the user input. Note that the exit event is doesn't need to be handled.
         :return:

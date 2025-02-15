@@ -76,7 +76,7 @@ class Tic_tac_toe2(Game):
             time.sleep(5)
             self.win = True
 
-    def events(self) -> None:
+    def events(self, event) -> None:
         if pygame.mouse.get_pressed()[0] and self.click_on_screen(pygame.mouse.get_pos()):
             self.add_to_board()
 

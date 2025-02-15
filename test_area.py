@@ -25,3 +25,7 @@
 #         if event.type == QUIT:
 #             pygame.display.update()
 #     pygame.display.flip()
+
+words = ''
+with open("wordsapi_sample.json", "r") as file:
+    
