@@ -119,7 +119,7 @@ class Pong(Game):
     def events(self, event) -> None:
         self.ball.events()
         if event.type == pygame.KEYDOWN:
-            print("key released pressed")
+            print("key pressed")
             keys = pygame.key.get_pressed()
             self.player1.events(keys, True)
             self.player2.events(keys, True)

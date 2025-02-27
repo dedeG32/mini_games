@@ -12,6 +12,7 @@ class Game(object):
         self.set_screen_resolution()
         self.screen = pygame.display.set_mode((self.screen_width, self.screen_height))
         self.win = False
+        self.debug = False
 
 
     def set_screen_resolution(self):
@@ -27,7 +28,8 @@ class Game(object):
         return 0<self.click_x<self.screen_width and 0<self.click_y<self.screen_height
 
     def set_font(self, font_size = 12, font = 'test_sans.ttf'):
-        return pygame.freetype.Font(font, font_size)
+        #return pygame.freetype.Font(font, font_size)
+        return pygame.font.SysFont(None, font_size)
     def set_tick(self, tick = 10):
         clock = pygame.time.Clock()
         clock.tick(tick)  # limits FPS to 10
@@ -60,6 +62,13 @@ class Game(object):
         """
         pass
 
+    def debug_(self) -> None:
+        """
+        Have the print statement that are needed to unsure the game is running properly. It is repeated for each interation
+        """
+        pass
+
+
     def start(self):
 
         while not self.win:
@@ -74,7 +83,8 @@ class Game(object):
             self.display_game()
             pygame.display.flip()
             self.action()
-
+            if self.debug:
+                self.debug_()
             self.check_win()
 
         pygame.quit()

@@ -19,7 +19,7 @@ def menu():
 def get_int(min, max) -> int:
     while True:
        try:
-            chose = int(input("Enter: "))
+            chose = int(input("-> "))
             if min <= chose <= max:
                 return chose
             else:
