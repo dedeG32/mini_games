@@ -26,7 +26,7 @@ class Wordle(Game):
         print(self.word_to_find, self.guess_word)
         self.font = self.set_font(30)
 
-        self.debug = True
+        self.debug = False
 
     def display_game(self):
         self.screen.fill("gray")
@@ -91,7 +91,7 @@ class Wordle(Game):
         if self.life != None and self.life<=0:
             print("You lose!")
             self.screen.fill("gray")
-            self.set_font(50)
+            self.font = self.set_font(50)
             text = self.font.render("You lost", True, "Red")
             self.screen.blit(text , (self.screen_width/2,self.screen_height/2))
             pygame.display.flip()
@@ -101,14 +101,15 @@ class Wordle(Game):
         elif self.found():
             print("You won!")
             self.screen.fill("gray")
-            self.font = self.font = self.set_font(50)
+            self.font = self.set_font(50)
             text = self.font.render("You won", True, "Green")
             self.screen.blit(text, (self.screen_width / 2, self.screen_height / 2))
             pygame.display.flip()
             time.sleep(5)
             self.win = True
 
-
+    def set_font(self, font_size = 12, font = 'test_sans.ttf'):
+        return pygame.font.SysFont(None, font_size)
 
     def events(self, event):
         if event.type == pygame.KEYDOWN:

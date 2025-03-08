@@ -9,7 +9,7 @@ class Tic_tac_toe2(Game):
         self.board = [["." for _ in range(3)] for _ in range(3)]
         self.player = 1
         self.set_tick(3)
-        self.font = self.set_font(font_size= 30)
+        self.set_font(font_size= 30)
 
     def display_game(self):
         self.screen.fill("white")
@@ -33,6 +33,9 @@ class Tic_tac_toe2(Game):
             self.player += 1
         else:
             print("can't do that!")
+
+    def set_font(self, font_size = 12, font = 'test_sans.ttf'):
+        self.font = pygame.freetype.Font(font, font_size)
 
     def set_screen_resolution(self):
         self.screen_width = self.screen_resolution[0] * 0.7 if self.screen_resolution[0]<self.screen_resolution[1] else self.screen_resolution[1] *0.7
