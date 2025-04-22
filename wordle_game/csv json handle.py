@@ -62,4 +62,4 @@ def handle_dir(huge_dict, string):
 
 
 if __name__ == "__main__":
-    json_to_csv("wordsapi_sample.json", "words.csv")
+    json_to_csv("wordsapi_sample.json", "wordle_game/words.csv")

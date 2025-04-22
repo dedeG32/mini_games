@@ -4,17 +4,11 @@ Multiple minigames
 from menu import menu
 def app():
     menu()
-    # def fct(i):
-    #     if i ==1:
-    #         return 7
-    #
-    # if fct(1):
-    #     print("hi")
 
 if __name__ == '__main__':
     app()
 
-#sudoko
+#sudoko_game
 #pong
 #align 4
 #tetris

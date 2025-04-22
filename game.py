@@ -15,9 +15,11 @@ class Game(object):
         self.debug = False
 
 
-    def set_screen_resolution(self):
-        self.screen_width, self.screen_height = self.screen_resolution
-
+    def set_screen_resolution(self, resolution: (int,int) = None):
+        if resolution:
+            self.screen_resolution, self.screen_height = resolution
+        else:
+            self.screen_width, self.screen_height = self.screen_resolution
     def click_on_screen(self) -> bool:
         """
         Checks if the click have been done on the pygame window. And refresh the self.x and self.y variable of the mouse
@@ -68,6 +70,11 @@ class Game(object):
         """
         pass
 
+    def img_load(self, image):
+        return pygame.image.load(image)
+
+    def img_resize(self, image, width,height):
+        return pygame.transform.scale(image, (width,height) )
 
     def start(self):
 
